@@ -335,7 +335,7 @@
 							}
 						}).then((res)=>{
 							console.log(res.data);
-							if(res.data.code==20002 || res.data.code==20001){
+							if(res.data.code==10002 || res.data.code==10001){
 								//token过期
 								var loginUrl = "login.html?tips=请先登录！&returnUrl=shopcart.html";
 								window.location.href = encodeURI(loginUrl);

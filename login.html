@@ -46,7 +46,6 @@
                         </div>
                     </form>
                 </div>
-
                 <div class="login-links">
                     <label for="remember-me"><input id="remember-me"
 								   type="checkbox">记住密码</label>
@@ -125,7 +124,7 @@
 
                             if (vo.code == 10000) {
                                 //如果登录成功，就把token存储到cookie
-                                setCookieValue("token", vo.msg);
+                                setCookieValue("token", vo.message);
                                 //将用户昵称和用户头像的路径保存在cookie
                                 setCookieValue("userId", vo.data.userId);
                                 setCookieValue("username", vo.data.username);
