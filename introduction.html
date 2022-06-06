@@ -1082,7 +1082,7 @@
             });
 
             //4.根据商品id查询商品评价统计
-            var url4 = baseUrl+"product/detail-commontscount/"+this.productId;
+            var url4 = baseUrl+"product/detail-commentscount/"+this.productId;
             axios.get(url4).then((res)=>{
                 this.commontsCountMap = res.data.data;
                 console.log(this.commontsCountMap);
