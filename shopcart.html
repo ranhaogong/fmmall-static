@@ -22,7 +22,10 @@
 		<div class="am-container header">
 			<ul class="message-l">
 				<div class="topMessage">
-					<div class="menu-hd">
+					<div v-if="isLogin" class="menu-hd">
+						{{username}},欢迎您！
+					</div>
+					<div v-else class="menu-hd">
 						<a href="#" target="_top" class="h">亲，请登录</a>
 						<a href="#" target="_top">免费注册</a>
 					</div>
@@ -303,7 +306,9 @@
 					shopcarts:[],
 					token:null,
 					opts:[],
-					totalPrice:0.00
+					totalPrice:0.00,
+					isLogin: false,
+					username: ""
 				},
 				watch:{
 					opts:function(){
@@ -316,6 +321,10 @@
 				},
 				created:function(){
 					var token = getCookieValue("token");
+					if (token != null && token != "") {
+						this.isLogin = true;
+						this.username = getCookieValue("username");
+					}
 					if(token == null){
 						var loginUrl = "login.html?tips=请先登录！&returnUrl=shopcart.html";
 						window.location.href = encodeURI(loginUrl);
@@ -328,14 +337,14 @@
 							url:url,
 							method:"get",
 							headers:{
-								token:token
+								token:this.token
 							},
 							params:{
 								userId:userId
 							}
 						}).then((res)=>{
 							console.log(res.data);
-							if(res.data.code==10002 || res.data.code==10001){
+							if(res.data.code==20002 || res.data.code==20001){
 								//token过期
 								var loginUrl = "login.html?tips=请先登录！&returnUrl=shopcart.html";
 								window.location.href = encodeURI(loginUrl);

@@ -2,16 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <title>商品页面</title>
 
-    <link href="static/css/admin.css" rel="stylesheet" type="text/css" />
-    <link href="static/css/amazeui.css" rel="stylesheet" type="text/css" />
-    <link href="static/css/demo.css" rel="stylesheet" type="text/css" />
-    <link type="text/css" href="static/css/optstyle.css" rel="stylesheet" />
-    <link type="text/css" href="static/css/style.css" rel="stylesheet" />
+    <link href="static/css/admin.css" rel="stylesheet" type="text/css"/>
+    <link href="static/css/amazeui.css" rel="stylesheet" type="text/css"/>
+    <link href="static/css/demo.css" rel="stylesheet" type="text/css"/>
+    <link type="text/css" href="static/css/optstyle.css" rel="stylesheet"/>
+    <link type="text/css" href="static/css/style.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 
     <script type="text/javascript" src="static/js/jquery-1.7.min.js"></script>
@@ -19,7 +20,6 @@
     <link rel="stylesheet" href="//unpkg.com/layui@2.6.5/dist/css/layui.css">
     <!-- 引入 layui.js -->
     <script src="//unpkg.com/layui@2.6.5/dist/layui.js">
-
 
 
         <script type="text/javascript" src="static/js/quick_links.js"></script>
@@ -75,9 +75,9 @@
     </div>
     <!--悬浮搜索框-->
     <div class="nav white">
-        <div class="logo"><img src="static/images/logo.png" /></div>
+        <div class="logo"><img src="static/images/logo.png"/></div>
         <div class="logoBig">
-            <li><img src="static/images/logo.png" /></li>
+            <li><img src="static/images/logo.png"/></li>
         </div>
         <div class="search-bar pr">
             <a name="index_none_header_sysc" href="#"></a>
@@ -115,11 +115,12 @@
             <li class="am-active">内容</li>
         </ol>
         <script type="text/javascript">
-            $(function() {});
-            $(window).load(function() {
+            $(function () {
+            });
+            $(window).load(function () {
                 $('.flexslider').flexslider({
                     animation: "slide",
-                    start: function(slider) {
+                    start: function (slider) {
                         $('body').removeClass('loading');
                     }
                 });
@@ -130,13 +131,13 @@
                 <div class="flexslider">
                     <ul class="slides">
                         <li>
-                            <img src="static/images/01.jpg" title="pic" />
+                            <img src="static/images/01.jpg" title="pic"/>
                         </li>
                         <li>
-                            <img src="static/images/02.jpg" />
+                            <img src="static/images/02.jpg"/>
                         </li>
                         <li>
-                            <img src="static/images/03.jpg" />
+                            <img src="static/images/03.jpg"/>
                         </li>
                     </ul>
                 </div>
@@ -150,9 +151,10 @@
 
                 <div class="box">
                     <template v-if="productImgs.length>0">
-                        <div  class="tb-booth tb-pic tb-s310">
+                        <div class="tb-booth tb-pic tb-s310">
                             <a href="static/images/01.jpg">
-                                <img :src="'static/pimgs/'+productImgs[0].url" alt="细节展示放大镜特效" :rel="'static/pimgs/'+productImgs[0].url" class="jqzoom" />
+                                <img :src="'static/pimgs/'+productImgs[0].url" alt="细节展示放大镜特效"
+                                     :rel="'static/pimgs/'+productImgs[0].url" class="jqzoom"/>
                             </a>
                         </div>
                     </template>
@@ -161,7 +163,8 @@
                         <template v-for="img,index in productImgs">
                             <li :class="{'tb-selected':index==0}">
                                 <div class="tb-pic tb-s40">
-                                    <a href="#"><img :src="'static/pimgs/'+img.url" :mid="'static/pimgs/'+img.url" :big="'static/pimgs/'+img.url"></a>
+                                    <a href="#"><img :src="'static/pimgs/'+img.url" :mid="'static/pimgs/'+img.url"
+                                                     :big="'static/pimgs/'+img.url"></a>
                                 </div>
                             </li>
                         </template>
@@ -183,11 +186,12 @@
                     <div class="tb-detail-price">
                         <li class="price iteminfo_price">
                             <dt>促销价</dt>
-                            <dd><em>¥</em><b class="sys_item_price">{{productSkus[currentSkuIndex].sellPrice}}</b>  </dd>
+                            <dd><em>¥</em><b class="sys_item_price">{{productSkus[currentSkuIndex].sellPrice}}</b></dd>
                         </li>
                         <li class="price iteminfo_mktprice">
                             <dt>原价</dt>
-                            <dd><em>¥</em><b class="sys_item_mktprice">{{productSkus[currentSkuIndex].originalPrice}}</b></dd>
+                            <dd><em>¥</em><b
+                                    class="sys_item_mktprice">{{productSkus[currentSkuIndex].originalPrice}}</b></dd>
                         </li>
                         <div class="clear"></div>
                     </div>
@@ -223,17 +227,21 @@
                             <div class="tm-indcon"><span class="tm-label">月销量</span><span class="tm-count">1015</span></div>
                         </li>-->
                         <li class="tm-ind-item tm-ind-sumCount canClick">
-                            <div class="tm-indcon"><span class="tm-label">累计销量</span><span class="tm-count">{{product.soldNum}}</span></div>
+                            <div class="tm-indcon"><span class="tm-label">累计销量</span><span
+                                    class="tm-count">{{product.soldNum}}</span></div>
                         </li>
                         <li class="tm-ind-item tm-ind-reviewCount canClick tm-line3">
-                            <div class="tm-indcon"><span class="tm-label">累计评价</span><span class="tm-count">640</span></div>
+                            <div class="tm-indcon"><span class="tm-label">累计评价</span><span class="tm-count">640</span>
+                            </div>
                         </li>
                     </ul>
                     <div class="clear"></div>
 
                     <!--各种规格-->
                     <div class="iteminfo_parameter sys_item_specpara">
-                        <dt class="theme-login"><div class="cart-title">可选规格<span class="am-icon-angle-right"></span></div></dt>
+                        <dt class="theme-login">
+                            <div class="cart-title">可选规格<span class="am-icon-angle-right"></span></div>
+                        </dt>
                         <dd>
                             <!--操作页面-->
 
@@ -252,23 +260,28 @@
                                             <div v-if="productSkus.length > 1" class="theme-options">
                                                 <div class="cart-title">套餐</div>
                                                 <ul>
-                                                    <template v-for="sku,index in productSkus">
+                                                    <template v-for="sku, index in productSkus">
                                                         <!--如果当前套餐是正在显示的套餐，则添加选中效果-->
-                                                        <li v-if="index==currentSkuIndex" class="sku-line selected" :data-index="index" @click="changeSku">{{sku.skuName}}<i></i></li>
+                                                        <li v-if="index==currentSkuIndex" class="sku-line selected"
+                                                            :data-index="index" @click="changeSku">
+                                                            {{sku.skuName}}<i></i></li>
                                                         <!--否则不添加选中效果-->
-                                                        <li v-else class="sku-line"  :data-index="index" @click="changeSku">{{sku.skuName}}<i></i></li>
+                                                        <li v-else class="sku-line" :data-index="index"
+                                                            @click="changeSku">{{sku.skuName}}<i></i></li>
                                                     </template>
                                                 </ul>
                                             </div>
 
                                             <!--显示当前套餐下的属性  skuProps  对象/Map-->
                                             <div id="props">
-                                                <div v-for="(value,key) in skuProps" class="theme-options" >
+                                                <div v-for="(value,key) in skuProps" class="theme-options">
                                                     <div class="cart-title">{{key}}</div>
                                                     <ul>
                                                         <template v-for="v,index in value">
-                                                            <li :class="{'sku-line':true,'selected':index==0}" :name="key"  @click="changeProp"
-                                                                :data-key="key" :data-v="v">{{v}}</li>
+                                                            <li :class="{'sku-line':true,'selected':index==0}"
+                                                                :name="key" @click="changeProp"
+                                                                :data-key="key" :data-v="v">{{v}}
+                                                            </li>
                                                         </template>
                                                     </ul>
                                                 </div>
@@ -300,15 +313,16 @@
                                             -->
 
 
-
-
                                             <div class="theme-options">
                                                 <div class="cart-title number">数量</div>
                         <dd>
-                            <input id="min" class="am-btn am-btn-default"  type="button" value="-" @click="changeNum(-1)"/>
-                            <input id="text_box" type="text" v-model="num" style="width:30px;" />
-                            <input id="add" class="am-btn am-btn-default"  type="button" value="+" @click="changeNum(1)"/>
-                            <span id="stock1" class="tb-hidden">库存<span class="stock">{{productSkus[currentSkuIndex].stock}}</span>件</span>
+                            <input id="min" class="am-btn am-btn-default" type="button" value="-"
+                                   @click="changeNum(-1)"/>
+                            <input id="text_box" type="text" v-model="num" style="width:30px;"/>
+                            <input id="add" class="am-btn am-btn-default" type="button" value="+"
+                                   @click="changeNum(1)"/>
+                            <span id="stock1" class="tb-hidden">库存<span
+                                    class="stock">{{productSkus[currentSkuIndex].stock}}</span>件</span>
                         </dd>
                     </div>
                 </div>
@@ -322,7 +336,7 @@
             </div>
             <div class="theme-signin-right">
                 <div class="img-info">
-                    <img src="static/images/songzi.jpg" />
+                    <img src="static/images/songzi.jpg"/>
                 </div>
                 <div class="text-info">
                     <span class="J_Price price-now">¥39.00</span>
@@ -342,7 +356,8 @@
         <div class="hot">
             <dt class="tb-metatit">折扣</dt>
             <div class="gold-list">
-                <p>当前套餐享{{productSkus[currentSkuIndex].discounts*10}}折优惠<!--<span>点击领券<i class="am-icon-sort-down"></i></span>--></p>
+                <p>当前套餐享{{productSkus[currentSkuIndex].discounts * 10}}折优惠
+                    <!--<span>点击领券<i class="am-icon-sort-down"></i></span>--></p>
             </div>
         </div>
         <div class="clear"></div>
@@ -424,7 +439,7 @@
 
                 <li class="first">
                     <div class="p-img">
-                        <a  href="#"> <img class="" src="static/images/browse1.jpg"> </a>
+                        <a href="#"> <img class="" src="static/images/browse1.jpg"> </a>
                     </div>
                     <div class="p-name"><a href="#">
                         【三只松鼠_开口松子】零食坚果特产炒货东北红松子原味
@@ -434,7 +449,7 @@
                 </li>
                 <li>
                     <div class="p-img">
-                        <a  href="#"> <img class="" src="static/images/browse1.jpg"> </a>
+                        <a href="#"> <img class="" src="static/images/browse1.jpg"> </a>
                     </div>
                     <div class="p-name"><a href="#">
                         【三只松鼠_开口松子】零食坚果特产炒货东北红松子原味
@@ -444,7 +459,7 @@
                 </li>
                 <li>
                     <div class="p-img">
-                        <a  href="#"> <img class="" src="static/images/browse1.jpg"> </a>
+                        <a href="#"> <img class="" src="static/images/browse1.jpg"> </a>
                     </div>
                     <div class="p-name"><a href="#">
                         【三只松鼠_开口松子】零食坚果特产炒货东北红松子原味
@@ -454,7 +469,7 @@
                 </li>
                 <li>
                     <div class="p-img">
-                        <a  href="#"> <img class="" src="static/images/browse1.jpg"> </a>
+                        <a href="#"> <img class="" src="static/images/browse1.jpg"> </a>
                     </div>
                     <div class="p-name"><a href="#">
                         【三只松鼠_开口松子】零食坚果特产炒货东北红松子原味
@@ -464,7 +479,7 @@
                 </li>
                 <li>
                     <div class="p-img">
-                        <a  href="#"> <img class="" src="static/images/browse1.jpg"> </a>
+                        <a href="#"> <img class="" src="static/images/browse1.jpg"> </a>
                     </div>
                     <div class="p-name"><a href="#">
                         【三只松鼠_开口松子218g】零食坚果特产炒货东北红松子原味
@@ -507,7 +522,7 @@
                             <li title="">包装方式:&nbsp;{{productParams.packagingMethod}}</li>
                             <li title="">规格重量:&nbsp;{{productParams.weight}}</li>
                             <li title="">储存方式：&nbsp;{{productParams.storageMethod}}</li>
-                            <li title="">食用方式：&nbsp;{{productParams.eatMethod}} </li>
+                            <li title="">食用方式：&nbsp;{{productParams.eatMethod}}</li>
                         </ul>
                         <div class="clear"></div>
                     </div>
@@ -516,7 +531,7 @@
                         <div class="attr-list-hd after-market-hd">
                             <h4>商品细节</h4>
                         </div>
-                        <div class="twlistNews" >
+                        <div class="twlistNews">
                             <span v-html="product.content"></span>
                         </div>
                     </div>
@@ -582,7 +597,7 @@
                                 <!-- 评论容器 -->
                                 <a href="">
                                     <!-- 评论者头像 -->
-                                    <img class="am-comment-avatar" :src="'static/'+commont.userImg" />
+                                    <img class="am-comment-avatar" :src="'static/'+commont.userImg"/>
                                 </a>
 
                                 <div class="am-comment-main">
@@ -591,14 +606,15 @@
                                         <!--<h3 class="am-comment-title">评论标题</h3>-->
                                         <div class="am-comment-meta">
                                             <!-- 评论元数据 -->
-                                            <a href="#link-to-user" class="am-comment-author">
-                                                {{commont.username.substring(0,2)+'*****'+ commont.username.substring(commont.username.length-1) }}
+                                            <a href="#link-to-user" class="am-comment-author" v-if="commont.username">
+                                                {{commont.username.substring(0, 2) + '*****' + commont.username.substring(commont.username.length - 1)
+                                                }}
                                                 <span v-if="commont.isAnonymous == 1">(匿名)</span>
                                                 <span v-else>({{commont.nickname}})</span>
                                             </a>
                                             <!-- 评论者 -->
                                             评论于
-                                            <time datetime="">{{commont.sepcName.substring(0,10)}}</time>
+                                            <time datetime="" v-if="commont.sepcName">{{commont.sepcName.substring(0, 10)}}</time>
                                         </div>
                                     </header>
 
@@ -613,7 +629,7 @@
                                             <div v-if="commont.replyStatus==1" class="tb-r-act-bar">
                                                 <hr>
                                                 <label style="color: gray; font-weight: bold;">商家回复：</label>
-                                                <time datetime="">回复于{{commont.replyTime.substring(0,10)}}</time>
+                                                <time datetime="" v-if="commont.replyTime">回复于{{commont.replyTime.substring(0, 10)}}</time>
                                                 <br/>
                                                 {{commont.replyContent}}
                                             </div>
@@ -645,7 +661,8 @@
                     <div class="clear"></div>
 
                     <div class="tb-reviewsft">
-                        <div class="tb-rate-alert type-attention">购买前请查看该商品的 <a href="#" target="_blank">购物保障</a>，明确您的售后保障权益。</div>
+                        <div class="tb-rate-alert type-attention">购买前请查看该商品的 <a href="#" target="_blank">购物保障</a>，明确您的售后保障权益。
+                        </div>
                     </div>
 
                 </div>
@@ -656,7 +673,7 @@
                         <ul class="am-avg-sm-2 am-avg-md-3 am-avg-lg-4 boxes">
                             <li>
                                 <div class="i-pic limit">
-                                    <img src="static/images/imgsearch1.jpg" />
+                                    <img src="static/images/imgsearch1.jpg"/>
                                     <p>【良品铺子_开口松子】零食坚果特产炒货
                                         <span>东北红松子奶油味</span></p>
                                     <p class="price fl">
@@ -667,7 +684,7 @@
                             </li>
                             <li>
                                 <div class="i-pic limit">
-                                    <img src="static/images/imgsearch1.jpg" />
+                                    <img src="static/images/imgsearch1.jpg"/>
                                     <p>【良品铺子_开口松子】零食坚果特产炒货
                                         <span>东北红松子奶油味</span></p>
                                     <p class="price fl">
@@ -678,7 +695,7 @@
                             </li>
                             <li>
                                 <div class="i-pic limit">
-                                    <img src="static/images/imgsearch1.jpg" />
+                                    <img src="static/images/imgsearch1.jpg"/>
                                     <p>【良品铺子_开口松子】零食坚果特产炒货
                                         <span>东北红松子奶油味</span></p>
                                     <p class="price fl">
@@ -689,7 +706,7 @@
                             </li>
                             <li>
                                 <div class="i-pic limit">
-                                    <img src="static/images/imgsearch1.jpg" />
+                                    <img src="static/images/imgsearch1.jpg"/>
                                     <p>【良品铺子_开口松子】零食坚果特产炒货
                                         <span>东北红松子奶油味</span></p>
                                     <p class="price fl">
@@ -700,7 +717,7 @@
                             </li>
                             <li>
                                 <div class="i-pic limit">
-                                    <img src="static/images/imgsearch1.jpg" />
+                                    <img src="static/images/imgsearch1.jpg"/>
                                     <p>【良品铺子_开口松子】零食坚果特产炒货
                                         <span>东北红松子奶油味</span></p>
                                     <p class="price fl">
@@ -711,7 +728,7 @@
                             </li>
                             <li>
                                 <div class="i-pic limit">
-                                    <img src="static/images/imgsearch1.jpg" />
+                                    <img src="static/images/imgsearch1.jpg"/>
                                     <p>【良品铺子_开口松子】零食坚果特产炒货
                                         <span>东北红松子奶油味</span></p>
                                     <p class="price fl">
@@ -722,7 +739,7 @@
                             </li>
                             <li>
                                 <div class="i-pic limit">
-                                    <img src="static/images/imgsearch1.jpg" />
+                                    <img src="static/images/imgsearch1.jpg"/>
                                     <p>【良品铺子_开口松子】零食坚果特产炒货
                                         <span>东北红松子奶油味</span></p>
                                     <p class="price fl">
@@ -733,7 +750,7 @@
                             </li>
                             <li>
                                 <div class="i-pic limit">
-                                    <img src="static/images/imgsearch1.jpg" />
+                                    <img src="static/images/imgsearch1.jpg"/>
                                     <p>【良品铺子_开口松子】零食坚果特产炒货
                                         <span>东北红松子奶油味</span></p>
                                     <p class="price fl">
@@ -744,7 +761,7 @@
                             </li>
                             <li>
                                 <div class="i-pic limit">
-                                    <img src="static/images/imgsearch1.jpg" />
+                                    <img src="static/images/imgsearch1.jpg"/>
                                     <p>【良品铺子_开口松子】零食坚果特产炒货
                                         <span>东北红松子奶油味</span></p>
                                     <p class="price fl">
@@ -755,7 +772,7 @@
                             </li>
                             <li>
                                 <div class="i-pic limit">
-                                    <img src="static/images/imgsearch1.jpg" />
+                                    <img src="static/images/imgsearch1.jpg"/>
                                     <p>【良品铺子_开口松子】零食坚果特产炒货
                                         <span>东北红松子奶油味</span></p>
                                     <p class="price fl">
@@ -766,7 +783,7 @@
                             </li>
                             <li>
                                 <div class="i-pic limit">
-                                    <img src="static/images/imgsearch1.jpg" />
+                                    <img src="static/images/imgsearch1.jpg"/>
                                     <p>【良品铺子_开口松子】零食坚果特产炒货
                                         <span>东北红松子奶油味</span></p>
                                     <p class="price fl">
@@ -777,7 +794,7 @@
                             </li>
                             <li>
                                 <div class="i-pic limit">
-                                    <img src="static/images/imgsearch1.jpg" />
+                                    <img src="static/images/imgsearch1.jpg"/>
                                     <p>【良品铺子_开口松子】零食坚果特产炒货
                                         <span>东北红松子奶油味</span></p>
                                     <p class="price fl">
@@ -846,7 +863,7 @@
                 </a>
                 <div class="ibar_login_box status_login">
                     <div class="avatar_box">
-                        <p class="avatar_imgbox"><img src="static/images/no-img_mid_.jpg" /></p>
+                        <p class="avatar_imgbox"><img src="static/images/no-img_mid_.jpg"/></p>
                         <ul class="user_info">
                             <li>用户名：sl1903</li>
                             <li>级&nbsp;别：普通会员</li>
@@ -888,7 +905,7 @@
 
             <div id="brand" class="item">
                 <a href="#">
-                    <span class="wdsc"><img src="static/images/wdsc.png" /></span>
+                    <span class="wdsc"><img src="static/images/wdsc.png"/></span>
                 </a>
                 <div class="mp_tooltip">
                     我的收藏
@@ -898,7 +915,7 @@
 
             <div id="broadcast" class="item">
                 <a href="#">
-                    <span class="chongzhi"><img src="static/images/chongzhi.png" /></span>
+                    <span class="chongzhi"><img src="static/images/chongzhi.png"/></span>
                 </a>
                 <div class="mp_tooltip">
                     我要充值
@@ -914,7 +931,8 @@
                 <!--二维码 -->
                 <li class="qtitem">
                     <a href="#none"><span class="mpbtn_qrcode"></span></a>
-                    <div class="mp_qrcode" style="display:none;"><img src="static/images/weixin_code_145.png" /><i class="icon_arrow_white"></i></div>
+                    <div class="mp_qrcode" style="display:none;"><img src="static/images/weixin_code_145.png"/><i
+                            class="icon_arrow_white"></i></div>
                 </li>
                 <li class="qtitem">
                     <a href="#top" class="return_top"><span class="top"></span></a>
@@ -993,88 +1011,90 @@
     </div>
 </div>
 </div>
-<script type="text/javascript" src="static/js/vue.js" ></script>
+<script type="text/javascript" src="static/js/vue.js"></script>
 <!-- 引入组件库 -->
 <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-<script type="text/javascript" src="static/js/cookie_utils.js" ></script>
-<script type="text/javascript" src="static/js/axios.min.js" ></script>
-<script type="text/javascript" src="static/js/utils.js" ></script>
-<script type="text/javascript" src="static/js/base.js" ></script>
+<script type="text/javascript" src="static/js/cookie_utils.js"></script>
+<script type="text/javascript" src="static/js/axios.min.js"></script>
+<script type="text/javascript" src="static/js/utils.js"></script>
+<script type="text/javascript" src="static/js/base.js"></script>
 <script type="text/javascript">
     var layer;
-    layui.use('layer', function(){
+    layui.use('layer', function () {
         layer = layui.layer;
     });
 
     var vm = new Vue({
-        el:"#container",
-        data:{
-            isLogin:false,
-            token:null,
-            username:"",
-            productId:"",
-            product:{
-                productName:"",  //让vue进行初次渲染时有数据显示
-                soldNum:0
+        el: "#container",
+        data: {
+            isLogin: false,
+            token: null,
+            username: "",
+            productId: "",
+            product: {
+                productName: "",  //让vue进行初次渲染时有数据显示
+                soldNum: 0
             },
-            productImgs:[],
-            productSkus:[],
-            currentSkuIndex:0,   //当前选择的套餐的索引（默认为0）
-            skuProps:{}	,		 //相当于一个map，用于存放当前套餐的属性
-            productParams:{},
-            productCommonts:[],
+            productImgs: [],
+            productSkus: [],
+            currentSkuIndex: 0,   //当前选择的套餐的索引（默认为0）
+            skuProps: {},		 //相当于一个map，用于存放当前套餐的属性
+            productParams: {},
+            productCommonts: [],
 
-            pageNum:1,
-            limit:3,
-            pageCount:0,
-            count:0,
+            pageNum: 1,
+            limit: 3,
+            pageCount: 0,
+            count: 0,
 
-            commontsCountMap:{},
-            chooseSkuProps:{},    	//用于记录选择的套餐属性
-            num:1					//用于记录用户购买/添加购物车的商品数量
+            commontsCountMap: {},
+            chooseSkuProps: {},    	//用于记录选择的套餐属性
+            num: 1					//用于记录用户购买/添加购物车的商品数量
         },
-        created:function(){
+        created: function () {
             //获取到url传递的商品id
             this.productId = getUrlParam("pid");
-            this.currentSkuIndex = getUrlParam("sid")!=null ? getUrlParam("sid"):0;
-            this.num = getUrlParam("num")!=null ? getUrlParam("num"):1;
+            this.currentSkuIndex = getUrlParam("sid") != null ? getUrlParam("sid") : 0;
+            this.num = getUrlParam("num") != null ? getUrlParam("num") : 1;
             this.token = getCookieValue("token");
-            if(this.token!=null && this.token!=""){
+            if (this.token != null && this.token != "") {
                 this.isLogin = true;
                 this.username = getCookieValue("username");
             }
 
 
             //1.根据商品id查询商品基本信息
-            var url1 = baseUrl+"product/detail-info/"+this.productId;
-            axios.get(url1).then((res)=>{
+            var url1 = baseUrl + "product/detail-info/" + this.productId;
+            axios.get(url1).then((res) => {
                 var map = res.data.data;
                 this.product = map.product;
                 this.productImgs = map.productImgs;
                 this.productSkus = map.productSkus;
                 //skuProps默认显示第一个套餐的属性
                 var str = this.productSkus[0].untitled;
-                this.skuProps = eval("("+str+")");
+                this.skuProps = eval("(" + str + ")");
             });
 
             //2.根据商品id查询商品参数信息
-            var url2 = baseUrl+"product/detail-params/"+this.productId;
-            axios.get(url2).then((res)=>{
+            var url2 = baseUrl + "product/detail-params/" + this.productId;
+            axios.get(url2).then((res) => {
                 this.productParams = res.data.data;
             });
 
             //3.根据商品id查询商品评论信息
-            var url3 = baseUrl+"product/detail-comments/"+this.productId;
-            axios.get(url3,{
-                params:{
-                    pageNum:this.pageNum,
-                    limit:this.limit
+            var url3 = baseUrl + "product/detail-commonts/" + this.productId;
+            axios.get(url3, {
+                params: {
+                    pageNum: this.pageNum,
+                    limit: this.limit
                 }
-            }).then((res)=>{
+            }).then((res) => {
                 //获取到评论分页数据
                 var pageHelper = res.data.data;
+
                 //当前页的评论列表
                 this.productCommonts = pageHelper.list;
+                console.log(this.productCommonts);
                 //总页数
                 this.pageCount = pageHelper.pageCount;
                 //总记录数
@@ -1082,18 +1102,18 @@
             });
 
             //4.根据商品id查询商品评价统计
-            var url4 = baseUrl+"product/detail-commentscount/"+this.productId;
-            axios.get(url4).then((res)=>{
+            var url4 = baseUrl + "product/detail-commontscount/" + this.productId;
+            axios.get(url4).then((res) => {
                 this.commontsCountMap = res.data.data;
                 console.log(this.commontsCountMap);
             });
 
         },
-        updated:function(){
+        updated: function () {
             //每次重新渲染之后执行
             //====>初始化放大镜效果
             $(".jqzoom").imagezoom();
-            $("#thumblist li a").click(function() {
+            $("#thumblist li a").click(function () {
                 $(this).parents("li").addClass("tb-selected").siblings().removeClass("tb-selected");
                 $(".jqzoom").attr('src', $(this).find("img").attr("mid"));
                 $(".jqzoom").attr('rel', $(this).find("img").attr("big"));
@@ -1101,26 +1121,26 @@
             //初始化套餐属性的选择效果
             //initChoose();
         },
-        methods:{
-            changeSku:function(event){
+        methods: {
+            changeSku: function (event) {
                 //获取点击的套餐的索引
                 this.currentSkuIndex = event.srcElement.dataset.index;
                 var str = this.productSkus[this.currentSkuIndex].untitled;
-                this.skuProps = eval("("+str+")");
+                this.skuProps = eval("(" + str + ")");
                 //重新定义选中效果（调用定义在list.js中的initChoose函数）
                 //initChoose();
             },
 
-            pager:function(currentPage){
+            pager: function (currentPage) {
                 this.pageNum = currentPage;
                 //请求下一页数据
-                var url3 = baseUrl+"product/detail-commonts/"+this.productId;
-                axios.get(url3,{
-                    params:{
-                        pageNum:this.pageNum,
-                        limit:this.limit
+                var url3 = baseUrl + "product/detail-commonts/" + this.productId;
+                axios.get(url3, {
+                    params: {
+                        pageNum: this.pageNum,
+                        limit: this.limit
                     }
-                }).then((res)=>{
+                }).then((res) => {
                     //获取到评论分页数据
                     var pageHelper = res.data.data;
                     //当前页的评论列表
@@ -1132,31 +1152,31 @@
                 });
             },
 
-            changeProp:function(event){
+            changeProp: function (event) {
                 var key = event.srcElement.dataset.key;
                 var v = event.srcElement.dataset.v;
-                this.chooseSkuProps[key]=v;
+                this.chooseSkuProps[key] = v;
                 console.log(this.chooseSkuProps);
 
                 //选择效果：
-                $("li[name='"+key+"']").removeClass("selected");
+                $("li[name='" + key + "']").removeClass("selected");
                 //让点击的选项有选中效果
-                $("li[name='"+key+"'][data-v='"+v+"']").addClass("selected");
+                $("li[name='" + key + "'][data-v='" + v + "']").addClass("selected");
             },
 
-            changeNum:function(m){
-                if(m == -1 && this.num>1){
-                    this.num = this.num-1;
-                }else if(m == 1 && this.num < this.productSkus[this.currentSkuIndex].stock ){
-                    this.num = parseInt(this.num)+ 1;
+            changeNum: function (m) {
+                if (m == -1 && this.num > 1) {
+                    this.num = this.num - 1;
+                } else if (m == 1 && this.num < this.productSkus[this.currentSkuIndex].stock) {
+                    this.num = parseInt(this.num) + 1;
                 }
             },
 
-            addShopCart:function(){
+            addShopCart: function () {
                 //套参属性转换成字符串
                 var propStr = "";
-                for(var key in this.chooseSkuProps){
-                    propStr+= key+":"+  this.chooseSkuProps[key] +";";
+                for (var key in this.chooseSkuProps) {
+                    propStr += key + ":" + this.chooseSkuProps[key] + ";";
                 }
                 //从cookie获取userId
                 var uid = getCookieValue("userId");
@@ -1166,53 +1186,53 @@
                     "productId": this.productId,
                     "productPrice": this.productSkus[this.currentSkuIndex].sellPrice,
                     "skuId": this.productSkus[this.currentSkuIndex].skuId,
-                    "skuProps":propStr ,
+                    "skuProps": propStr,
                     "userId": uid
                 };
                 //从cookie中获取token
                 var token = getCookieValue("token");
                 //添加购物车
-                var url5 = baseUrl+"shopcart/add"
+                var url5 = baseUrl + "shopcart/add"
                 axios({
-                    url:url5,
-                    method:"post",
-                    headers:{
-                        token:token
+                    url: url5,
+                    method: "post",
+                    headers: {
+                        token: token
                     },
                     data: cart
-                }).then((res)=>{
+                }).then((res) => {
                     console.log(res);
                     //处理添加购物车的回调
-                    if(res.data.code == 10000){
+                    if (res.data.code == 10000) {
                         //添加购物车成功！
                         layer.msg("添加购物车成功！");
-                    }else if(res.data.code == 10001){
+                    } else if (res.data.code == 10001) {
                         //添加购物车失败！
                         layer.msg("添加购物车失败！");
-                    }else{
+                    } else {
                         var str = "";
-                        if(res.data.code == 20001){
+                        if (res.data.code == 20001) {
                             str = "请先登录！";
-                        }else if(res.data.code == 20002){
+                        } else if (res.data.code == 20002) {
                             str = "登录过期，请重新登录！";
                         }
-                        var params = "tips="+str+"&returnUrl=introduction.html&pid="
-                            +this.productId+"&sid="+this.currentSkuIndex+"&num="+this.num;
+                        var params = "tips=" + str + "&returnUrl=introduction.html&pid="
+                            + this.productId + "&sid=" + this.currentSkuIndex + "&num=" + this.num;
 
-                        var loginUrl = "login.html?"+params;
+                        var loginUrl = "login.html?" + params;
 
                         //跳转到登录页面
-                        window.location.href= encodeURI(loginUrl);
+                        window.location.href = encodeURI(loginUrl);
                     }
 
                 });
             }
 
         },
-        watch:{
-            skuProps:function(){
+        watch: {
+            skuProps: function () {
                 this.chooseSkuProps = {};
-                for(var key in this.skuProps){
+                for (var key in this.skuProps) {
                     this.chooseSkuProps[key] = this.skuProps[key][0];
                 }
                 console.log(this.chooseSkuProps);
