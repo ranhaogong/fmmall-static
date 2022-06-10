@@ -6,14 +6,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<title>购物车页面</title>
+		<script type="text/javascript" src="static/js/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript" src="static/js/jquery.js"></script>
+		<script type="text/javascript" src="static/js/qrcode.min.js"></script>
 
 		<link href="static/css/amazeui.css" rel="stylesheet" type="text/css" />
 		<link href="static/css/demo.css" rel="stylesheet" type="text/css" />
 		<link href="static/css/cartstyle.css" rel="stylesheet" type="text/css" />
 		<link href="static/css/optstyle.css" rel="stylesheet" type="text/css" />
 
-		<script type="text/javascript" src="static/js/jquery.js"></script>
-		<script type="text/javascript" src="static/js/qrcode.min.js"></script>
 	</head>
 
 	<body>
@@ -175,6 +176,7 @@
 					//只要后端通过websocket向此连接发消息就会触发onmessage事件
 					websocket.onmessage = function(event){
 						var msg = event.data;
+						console.log(msg);
 						if(msg=="1"){
 							$("#div1").html("<label style='font-size:20px; color:green'>订单支付完成！</label>");
 						}
