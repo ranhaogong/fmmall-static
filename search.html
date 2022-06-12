@@ -13,7 +13,7 @@
 		<script type="text/javascript" src="static/js/script.js"></script>
 		<!-- 引入样式 -->
 		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-		
+
 	</head>
 
 	<body>
@@ -22,7 +22,10 @@
 			<div class="am-container header">
 				<ul class="message-l">
 					<div class="topMessage">
-						<div class="menu-hd">
+						<div v-if="isLogin" class="menu-hd">
+							{{username}},欢迎您！
+						</div>
+						<div v-else class="menu-hd">
 							<a href="#" target="_top" class="h">亲，请登录</a>
 							<a href="#" target="_top">免费注册</a>
 						</div>
@@ -59,16 +62,16 @@
 					<div class="logoBig">
 						<li><img src="static/images/logo.png" /></li>
 					</div>
-	
+
 					<div class="search-bar pr">
 						<a name="index_none_header_sysc" href="#"></a>
 						<form>
-							<input id="searchInput" v-model="keyword" name="index_none_header_sysc" type="text" placeholder="搜索" autocomplete="off">
+							<input id="searchInput" v-model="keyword" name="keyword" type="text" placeholder="搜索" autocomplete="off">
 							<input id="ai-topsearch" class="submit am-btn"  value="搜索" index="1" type="submit">
 						</form>
 					</div>
 				</div>
-	
+
 			<div class="clear"></div>
 			<b class="line"></b>
 	        <div class="search">
@@ -91,18 +94,18 @@
 					</div>
 						<div class="am-g am-g-fixed">
 								<div class="am-u-sm-12 am-u-md-12">
-			                  	<div class="theme-popover">														
+			                  	<div class="theme-popover">
 									<div class="searchAbout">
 										<span class="font-pale">相关搜索：</span>
 										<a title="坚果" href="#">坚果</a>
 										<a title="瓜子" href="#">瓜子</a>
 										<a title="鸡腿" href="#">豆干</a>
-		
+
 									</div>
 									<ul class="select">
 										<p class="title font-normal">
 											<span class="fl">松子</span>
-											<span class="total fl">搜索到<strong class="num">997</strong>件相关商品</span>
+											<span class="total fl" >搜索到<strong class="num">{{count}}</strong>件相关商品</span>
 										</p>
 										<div class="clear"></div>
 										<li class="select-result">
@@ -115,15 +118,15 @@
 										<div class="clear"></div>
 										<li class="select-list">
 											<dl id="select1">
-												<dt class="am-badge am-round">品牌</dt>	
-											
-												 <div class="dd-conent">										
+												<dt class="am-badge am-round">品牌</dt>
+
+												 <div class="dd-conent">
 													<dd class="select-all selected"><a href="#">全部</a></dd>
 													<template v-for="brand in brands">
-														<dd><a href="#">{{brand}}</a></dd>
+														<dd><a href="#" v-if="brand">{{brand}}</a></dd>
 													</template>
 												 </div>
-								
+
 											</dl>
 										</li>
 										<!--
@@ -163,19 +166,19 @@
 											<li class="big"><a title="评价" href="#">评价为主</a></li>
 										</div>
 										<div class="clear"></div>
-		
+
 										<ul class="am-avg-sm-2 am-avg-md-3 am-avg-lg-4 boxes">
 											<template v-for="p in products">
 												<li>
-													<div class="i-pic limit" @click="toIntroduction(p.productId)" :data-id="p.productId">
-														<img :src="'static/pimgs/'+p.skus[0].skuImg" />											
-														<p class="title fl">【{{p.productName}}】 {{p.skus[0].skuName}}</p>
+													<div class="i-pic limit" @click="toIntroduction(p.productId)" :data-id="p.productId" >
+														<img :src="'static/pimgs/'+p.skus[0].skuImg"/>
+														<p class="title fl" >【{{p.productName}}】 {{p.skus[0].skuName}}</p>
 														<p class="price fl">
 															<b>¥</b>
-															<strong>{{p.skus[0].sellPrice}}</strong>
+															<strong >{{p.skus[0].sellPrice}}</strong>
 														</p>
 														<p class="number fl">
-															销量<span>{{p.soldNum}}</span>
+															销量<span >{{p.soldNum}}</span>
 														</p>
 													</div>
 												</li>
@@ -183,7 +186,7 @@
 										</ul>
 									</div>
 									<div class="search-side">
-		
+
 										<div class="side-title">
 											经典搭配
 										</div>
@@ -231,9 +234,9 @@
 									</div>
 									<div class="clear"></div>
 									<!--分页 -->
-									<el-pagination background layout="prev, pager, next" 
+									<el-pagination background layout="prev, pager, next"
 									               :current-page="pageNum"
-									               :page-size="limit" 
+									               :page-size="limit"
 									               :total="count" @current-change="pager"> </el-pagination>
 									<!--
 									<ul class="am-pagination am-pagination-right">
@@ -272,15 +275,15 @@
 							</div>
 					</div>
 				</div>
-	
+
 			<!--引导 -->
 			<div class="navCir">
 				<li><a href="home.html"><i class="am-icon-home "></i>首页</a></li>
 				<li><a href="sort.html"><i class="am-icon-list"></i>分类</a></li>
-				<li><a href="shopcart.html"><i class="am-icon-shopping-basket"></i>购物车</a></li>	
-				<li><a href="person/index.html"><i class="am-icon-user"></i>我的</a></li>					
+				<li><a href="shopcart.html"><i class="am-icon-shopping-basket"></i>购物车</a></li>
+				<li><a href="person/index.html"><i class="am-icon-user"></i>我的</a></li>
 			</div>
-	
+
 			<!--菜单 -->
 			<div class=tip>
 				<div id="sidebar">
@@ -303,7 +306,7 @@
 								</div>
 								<i class="icon_arrow_white"></i>
 							</div>
-	
+
 						</div>
 						<div id="shopCart" class="item">
 							<a href="#">
@@ -323,7 +326,7 @@
 								<i class="icon_arrow_right_black"></i>
 							</div>
 						</div>
-	
+
 						<div id="foot" class="item">
 							<a href="#">
 								<span class="zuji"></span>
@@ -333,7 +336,7 @@
 								<i class="icon_arrow_right_black"></i>
 							</div>
 						</div>
-	
+
 						<div id="brand" class="item">
 							<a href="#">
 								<span class="wdsc"><img src="static/images/wdsc.png" /></span>
@@ -343,7 +346,7 @@
 								<i class="icon_arrow_right_black"></i>
 							</div>
 						</div>
-	
+
 						<div id="broadcast" class="item">
 							<a href="#">
 								<span class="chongzhi"><img src="static/images/chongzhi.png" /></span>
@@ -353,7 +356,7 @@
 								<i class="icon_arrow_right_black"></i>
 							</div>
 						</div>
-	
+
 						<div class="quick_toggle">
 							<li class="qtitem">
 								<a href="#"><span class="kfzx"></span></a>
@@ -368,12 +371,12 @@
 								<a href="#top" class="return_top"><span class="top"></span></a>
 							</li>
 						</div>
-	
+
 						<!--回到顶部 -->
 						<div id="quick_links_pop" class="quick_links_pop hide"></div>
-	
+
 					</div>
-	
+
 				</div>
 				<div id="prof-content" class="nav-content">
 					<div class="nav-con-close">
@@ -398,7 +401,7 @@
 					<div>
 						资产
 					</div>
-	
+
 					<div class="ia-head-list">
 						<a href="#" target="_blank" class="pl">
 							<div class="num">0</div>
@@ -413,7 +416,7 @@
 							<div class="text">余额</div>
 						</a>
 					</div>
-	
+
 				</div>
 				<div id="foot-content" class="nav-content">
 					<div class="nav-con-close">
@@ -440,16 +443,17 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="theme-popover-mask"></div>
 		</div>
 		<script type="text/javascript" src="static/js/quick_links.js"></script>
-		
+
 		<script type="text/javascript" src="static/js/vue.js" ></script>
 		<!-- 引入组件库 -->
 		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
 		<script type="text/javascript" src="static/js/axios.min.js" ></script>
 		<script type="text/javascript" src="static/js/utils.js" ></script>
+		<script type="text/javascript" src="static/js/cookie_utils.js"></script>
 		<script type="text/javascript" src="static/js/base.js" ></script>
 		<script type="text/javascript">
 			var vm = new Vue({
@@ -461,13 +465,20 @@
 					products:[],
 					count:0,
 					brands:[],
-					keyword:""
+					keyword:"",
+					isLogin: false,
+					username:""
 				},
 				created:function(){
+					var token = getCookieValue("token");
+					if (token != null && token != "") {
+						this.isLogin = true;
+						this.username = getCookieValue("username");
+					}
 					//1.获取从上个页面传递过来的参数
 					var cid = getUrlParam("cid");
 					var keyword = getUrlParam("keyword");
-					
+
 					if(cid != null){
 						this.categoryId = cid;
 						//2.请求接口：查询此类别下的商品信息
@@ -486,6 +497,7 @@
 								this.products = res.data.data.list;
 								this.count = res.data.data.count;
 							}
+							console.log(this.count);
 						});
 						//3.请求接口： 根据类别查询此类别下商品的品牌
 						var url2 = baseUrl+"product/listbrands/"+this.categoryId;
@@ -569,17 +581,17 @@
 								}
 							});
 						}
-						
+
 					},
 					toIntroduction:function(pid){
 						window.location.href = "introduction.html?pid="+pid;
 					}
 				}
 			});
-			
-			
+
+
 		</script>
-		
+
 	</body>
 
 </html>

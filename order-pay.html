@@ -21,14 +21,17 @@
 		<div id="container">
 			<!--顶部导航条 -->
 			<div class="am-container header">
-			<ul class="message-l">
-				<div class="topMessage">
-					<div class="menu-hd">
-						<a href="#" target="_top" class="h">亲，请登录</a>
-						<a href="#" target="_top">免费注册</a>
+				<ul class="message-l">
+					<div class="topMessage">
+						<div v-if="isLogin" class="menu-hd">
+							{{username}},欢迎您！
+						</div>
+						<div v-else class="menu-hd">
+							<a href="#" target="_top" class="h">亲，请登录</a>
+							<a href="#" target="_top">免费注册</a>
+						</div>
 					</div>
-				</div>
-			</ul>
+				</ul>
 			<ul class="message-r">
 				<div class="topMessage home">
 					<div class="menu-hd"><a href="index.html" target="_top" class="h">商城首页</a></div>
@@ -141,9 +144,9 @@
 			<li><a href="person/index.html"><i class="am-icon-user"></i>我的</a></li>					
 		</div>
 		</div>
-		<script type="text/javascript" src="static/js/cookie_utils.js" ></script>
 		<script type="text/javascript" src="static/js/vue.js" ></script>
 		<script type="text/javascript" src="static/js/axios.min.js" ></script>
+		<script type="text/javascript" src="static/js/cookie_utils.js" ></script>
 		<script type="text/javascript" src="js/jquery-3.4.1.min.js" ></script>
 		<script type="text/javascript" src="static/js/qrcode.min.js"></script>
 		<script type="text/javascript" src="static/js/base.js" ></script>
@@ -152,10 +155,17 @@
 			var vm = new Vue({
 				el:"#container",
 				data:{
-					orderInfo:{}
+					orderInfo:{},
+					isLogin: false,
+					username: ""
 				},
 				//vue声明周期 ：  创建对象---beforeCreate---初始化data---created---加载模版---beforeMount---渲染数据---mounted
 				created:function(){
+					var token = getCookieValue("token");
+					if (token != null && token != "") {
+						this.isLogin = true;
+						this.username = getCookieValue("username");
+					}
 					var jsonstr = localStorage.getItem("orderInfo");
 					if(jsonstr!=null){
 						localStorage.removeItem("orderInfo");
