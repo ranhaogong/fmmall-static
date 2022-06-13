@@ -6,3 +6,4 @@
 
 ## 项目运行
 - 修改 `base.js`，`baseUrl` 和 `webSocketBaseUrl` 修改为服务器ip地址
+- 如果发现首页轮播图无法正常显示，请关闭 `AdBlock` 和 `AdGuard` 等浏览器插件
